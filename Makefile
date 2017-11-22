@@ -8,19 +8,25 @@ OBJS = stringset.o main.o
 
 
 stringset_test : $(OBJS)
-	$(CC) $(LDFLAGS) -o $(EXE) \
+	@echo "Compiling..."
+	@$(CC) $(LDFLAGS) -o $(EXE) \
 	stringset.o \
 	main.o
+	@echo "Done"
 
 grind : stringset_test
 	valgrind --leak-check=yes ./$(EXE)
 
 stringset.o : stringset.c stringset.h
-	$(CC) -c -g stringset.c
+	@echo "Compiling..."
+	@$(CC) -c -g stringset.c
 
 main.o : main.c
-	$(CC) -c -g main.c
+	@echo "Compiling..."
+	@$(CC) -c -g main.c
 
 
 clean :
-	rm -rf *.o $(EXE) *.dSYM
+	@echo "Cleaning..."
+	@rm -rf *.o $(EXE) *.dSYM
+	@echo "Done"
