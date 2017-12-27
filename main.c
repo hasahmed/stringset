@@ -5,10 +5,11 @@ int main() {
     node *n = NULL;
     node_free_list(n);
     stringset *s = stringset_new(5);
-    unsigned int i = 0;
-    for(i = 0; i < s->node_array_length; i++){
+    int i = 0;
+    for (i = 0; i < s->node_array_length; i++) {
         s->node_array[i] = node_new("hello", NULL);
     }
+    /*list_print(*s->node_array);*/
     stringset_free(s);
 //    stringset *s = stringset_new(10);
 //    node *node_list = list_init();

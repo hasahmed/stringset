@@ -38,17 +38,33 @@ void node_init(node *n, char *string, node *next){
     strcpy(n->string, string);
     n->next = next;
 }
+
+
+/**
+ * Creates a new node with a string and next node
+ * string: The character array to place in the new node
+ * next:   The node that will come after this new node
+ */
 node* node_new(char *string, node *next){
     node *newnode = (node*)malloc(sizeof(node));
-    newnode->string = (char*)malloc(sizeof(char) * strlen(string));
+    newnode->string = (char*)malloc((sizeof(char) * strlen(string) + 1)); //+1 needed for null character
     strcpy(newnode->string, string);
     newnode->next = next;
     return newnode;
 }
+
+/**
+ * n: The node to free
+ */
 void node_free(node *n){
     free(n->string);
     free(n);
 }
+
+/** 
+ * Frees nodes starting at n unitl it reaches a node whos next is NULL
+ * n: The begining of a linked list of nodes
+ */
 void node_free_list(node *n){
     if(!n) //if n is null, no need to free
         return;
