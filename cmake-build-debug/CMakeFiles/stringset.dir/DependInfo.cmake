@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/hasankatie/programming/cworkspace/hlib/stringset/main.c" "/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/CMakeFiles/stringset.dir/main.c.o"
-  "/Users/hasankatie/programming/cworkspace/hlib/stringset/stringset.c" "/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/CMakeFiles/stringset.dir/stringset.c.o"
+  "/Users/hasankatie/programming/my_repos/c_repos/stringset/main.c" "/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/CMakeFiles/stringset.dir/main.c.o"
+  "/Users/hasankatie/programming/my_repos/c_repos/stringset/stringset.c" "/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/CMakeFiles/stringset.dir/stringset.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

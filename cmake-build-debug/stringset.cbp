@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug"/>
+				<Option working_dir="/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug"/>
+				<Option working_dir="/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug"/>
+				<Option working_dir="/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="stringset">
-				<Option output="/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/stringset" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug"/>
+				<Option output="/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/stringset" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -52,15 +52,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 stringset"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 stringset"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="stringset/fast">
-				<Option output="/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/stringset" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug"/>
+				<Option output="/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/stringset" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -73,23 +73,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 stringset/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/cworkspace/hlib/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 stringset/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/hasankatie/programming/cworkspace/hlib/stringset/main.c">
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/main.c">
 			<Option target="stringset"/>
 		</Unit>
-		<Unit filename="/Users/hasankatie/programming/cworkspace/hlib/stringset/stringset.c">
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/stringset.c">
 			<Option target="stringset"/>
 		</Unit>
-		<Unit filename="/Users/hasankatie/programming/cworkspace/hlib/stringset/stringset.h">
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/stringset.h">
 			<Option target="stringset"/>
 		</Unit>
-		<Unit filename="/Users/hasankatie/programming/cworkspace/hlib/stringset/CMakeLists.txt">
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

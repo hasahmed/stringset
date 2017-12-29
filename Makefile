@@ -6,6 +6,7 @@ LDFLAGS = -g
 EXE = stringset_test
 OBJS = stringset.o main.o
 
+GRIND_CMD = valgrind --leak-check=yes ./$(EXE)
 
 stringset_test : $(OBJS)
 	@echo "Compiling..."
@@ -14,8 +15,11 @@ stringset_test : $(OBJS)
 	main.o
 	@echo "Done"
 
-grind : stringset_test
-	valgrind --leak-check=yes ./$(EXE)
+grind : $(EXE)
+	GRIND_CMD
+
+server_grind : grind
+
 
 stringset.o : stringset.c stringset.h
 	@echo "Compiling..."
