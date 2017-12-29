@@ -14,7 +14,7 @@ int main() {
 //    stringset *s = stringset_new(10);
 //    node *node_list = list_init();
 //    node_init(node_list, "hello", NULL);
-    char strbuf[1000];
+//    char strbuf[1000];
 //    for (i = 0; i < 1000; i++){
 //        sprintf(strbuf, "%d", i);
 //        node *n = list_insert_new_last(node_list, strbuf);
