@@ -16,10 +16,7 @@ stringset_test : $(OBJS)
 	@echo "Done"
 
 grind : $(EXE)
-	GRIND_CMD
-
-server_grind : grind
-
+	$(GRIND_CMD)
 
 stringset.o : stringset.c stringset.h
 	@echo "Compiling..."
