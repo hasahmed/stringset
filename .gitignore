@@ -1,3 +1,4 @@
 servertest.sh
 *.swp
 *.swo
+*.o
