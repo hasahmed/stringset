@@ -1,2 +1,0 @@
-make: valgrind: No such file or directory
-make: *** [grind] Error 1
