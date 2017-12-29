@@ -4,5 +4,22 @@
 
 #ifndef STRINGSET_NODE_H
 #define STRINGSET_NODE_H
+typedef struct node{
+    char *string;
+    struct node *next;
+} node;
 
+//node functions
+node* node_new(char *string, node *next);
+void node_free(node *n);
+void node_free_list(node *n);
+void node_init(node *n, char *string, node *next);
+node* node_null();
+
+
+//node list functions
+node* list_insert_new_after(node *node_to_go_after, char *string);
+node* list_insert_new_last(node *n, char *string);
+void list_print(node *n);
+node* list_init();
 #endif //STRINGSET_NODE_H

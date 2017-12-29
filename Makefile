@@ -1,10 +1,11 @@
 CC = gcc
-CFLAGS = -g -o0 -Wall
+#CFLAGS = -g -Wall
+CFLAGS = -c -g -Wall
 LDFLAGS = -g
 
 
 EXE = stringset_test
-OBJS = stringset.o main.o
+OBJS = stringset.o main.o node.o
 GRIND_CMD = valgrind --leak-check=yes ./$(EXE)
 
 SERVER_GRIND=servertest.sh
@@ -12,8 +13,7 @@ SERVER_GRIND=servertest.sh
 stringset_test : $(OBJS)
 	@echo "Compiling..."
 	@$(CC) $(LDFLAGS) -o $(EXE) \
-	stringset.o \
-	main.o
+	$(OBJS)
 	@echo "Done"
 
 grind : $(EXE)
@@ -25,12 +25,16 @@ servergrind : stringset_test
 
 stringset.o : stringset.c stringset.h
 	@echo "Compiling..."
-	@$(CC) -c -g stringset.c
+	@$(CC) $(CFLAGS) stringset.c
 
 main.o : main.c
 	@echo "Compiling..."
-	@$(CC) -c -g main.c
+	@$(CC) $(CFLAGS) main.c
 
+
+node.o : node.c
+	@echo "Compiling..."
+	@$(CC) $(CFLAGS) node.c
 
 clean :
 	@echo "Cleaning..."
