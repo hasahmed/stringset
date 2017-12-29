@@ -5,6 +5,7 @@
 
 #include "node.h"
 #include "stringset.h"
+#include "util.h"
 
 stringset* stringset_new(unsigned int initial_size){
     stringset *str_set = (stringset*) malloc(sizeof(stringset));
@@ -16,13 +17,6 @@ stringset* stringset_new(unsigned int initial_size){
     }
     str_set->num_elements = 0; //all that has been allocated is the pointer to the first element
     return str_set;
-}
-unsigned long hash_code(char *str) { /* copied djb2 hashing algorithm */
-    unsigned long hash = 5381;
-    int c;
-    while ((c = *str++))
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-    return hash;
 }
 
 void stringset_free(stringset *str_set){

@@ -95,6 +95,12 @@
 		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/stringset.h">
 			<Option target="stringset"/>
 		</Unit>
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/util.c">
+			<Option target="stringset"/>
+		</Unit>
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/util.h">
+			<Option target="stringset"/>
+		</Unit>
 		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

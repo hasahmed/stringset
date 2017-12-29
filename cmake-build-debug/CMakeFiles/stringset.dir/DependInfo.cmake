@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/hasankatie/programming/my_repos/c_repos/stringset/main.c" "/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/CMakeFiles/stringset.dir/main.c.o"
   "/Users/hasankatie/programming/my_repos/c_repos/stringset/node.c" "/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/CMakeFiles/stringset.dir/node.c.o"
   "/Users/hasankatie/programming/my_repos/c_repos/stringset/stringset.c" "/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/CMakeFiles/stringset.dir/stringset.c.o"
+  "/Users/hasankatie/programming/my_repos/c_repos/stringset/util.c" "/Users/hasankatie/programming/my_repos/c_repos/stringset/cmake-build-debug/CMakeFiles/stringset.dir/util.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

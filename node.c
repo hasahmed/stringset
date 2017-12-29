@@ -3,13 +3,14 @@
 //
 
 #include <stdlib.h>
-#include <string.h>
+//#include <string.h>
 #include <stdio.h>
 #include "node.h"
+#include "util.h"
 
 void node_init(node *n, char *string, node *next){
-    n->string = (char*)malloc(sizeof(char) * strlen(string));
-    strcpy(n->string, string);
+    n->string = (char*)malloc(sizeof(char) * my_strlen(string));
+    my_strcpy(n->string, string);
     n->next = next;
 }
 /**
@@ -19,8 +20,8 @@ void node_init(node *n, char *string, node *next){
  */
 node* node_new(char *string, node *next){
     node *newnode = (node*)malloc(sizeof(node));
-    newnode->string = (char*)malloc((sizeof(char) * strlen(string) + 1)); //+1 needed for null character
-    strcpy(newnode->string, string);
+    newnode->string = (char*)malloc((sizeof(char) * my_strlen(string) + 1)); //+1 needed for null character
+    my_strcpy(newnode->string, string);
     newnode->next = next;
     return newnode;
 }

@@ -17,7 +17,7 @@ stringset* stringset_new(unsigned int initial_size);
 void stringset_free(stringset *str_set);
 int stringset_add(const char* string);
 int stringset_remove(const char* string);
-int stringset_check(const char* string);
+int stringset_contains(const char* string);
 unsigned long hash_code(char *str);
 
 
