@@ -2,3 +2,4 @@ servertest.sh
 *.swp
 *.swo
 *.o
+cmake-build-debug/*
