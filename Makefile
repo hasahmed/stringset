@@ -19,8 +19,8 @@ stringset_test : $(OBJS)
 grind : $(EXE)
 	$(GRIND_CMD)
 
-servergrind :
-	./$(SERVER_GRIND)
+servergrind : stringset_test
+	@./$(SERVER_GRIND) &
 
 
 stringset.o : stringset.c stringset.h

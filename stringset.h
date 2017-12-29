@@ -23,14 +23,11 @@ struct string_set{
     node **node_array; //array of nodes
 };
 typedef struct string_set stringset;
-
-/**
- *
- * @param initial_size the size of the array that will hold the elements initially
- * @return returns a pointer to the stringset object allocated
- */
 stringset* stringset_new(unsigned int initial_size);
 void stringset_free(stringset *str_set);
+int stringset_add(const char* string);
+int stringset_remove(const char* string);
+int stringset_check(const char* string);
 unsigned long hash_code(char *str);
 
 //node functions
