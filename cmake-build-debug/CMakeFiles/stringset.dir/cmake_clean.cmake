@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/stringset.dir/main.c.o"
   "CMakeFiles/stringset.dir/stringset.c.o"
+  "CMakeFiles/stringset.dir/node.c.o"
   "stringset.pdb"
   "stringset"
 )

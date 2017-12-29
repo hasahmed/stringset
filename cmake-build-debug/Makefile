@@ -150,6 +150,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/stringset.dir/build.make CMakeFiles/stringset.dir/main.c.s
 .PHONY : main.c.s
 
+node.o: node.c.o
+
+.PHONY : node.o
+
+# target to build an object file
+node.c.o:
+	$(MAKE) -f CMakeFiles/stringset.dir/build.make CMakeFiles/stringset.dir/node.c.o
+.PHONY : node.c.o
+
+node.i: node.c.i
+
+.PHONY : node.i
+
+# target to preprocess a source file
+node.c.i:
+	$(MAKE) -f CMakeFiles/stringset.dir/build.make CMakeFiles/stringset.dir/node.c.i
+.PHONY : node.c.i
+
+node.s: node.c.s
+
+.PHONY : node.s
+
+# target to generate assembly for a file
+node.c.s:
+	$(MAKE) -f CMakeFiles/stringset.dir/build.make CMakeFiles/stringset.dir/node.c.s
+.PHONY : node.c.s
+
 stringset.o: stringset.c.o
 
 .PHONY : stringset.o
@@ -189,6 +216,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... node.o"
+	@echo "... node.i"
+	@echo "... node.s"
 	@echo "... stringset.o"
 	@echo "... stringset.i"
 	@echo "... stringset.s"

@@ -83,6 +83,12 @@
 		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/main.c">
 			<Option target="stringset"/>
 		</Unit>
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/node.c">
+			<Option target="stringset"/>
+		</Unit>
+		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/node.h">
+			<Option target="stringset"/>
+		</Unit>
 		<Unit filename="/Users/hasankatie/programming/my_repos/c_repos/stringset/stringset.c">
 			<Option target="stringset"/>
 		</Unit>
