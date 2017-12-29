@@ -1,4 +1,4 @@
-servertest.sh
+*.sh
 *.swp
 *.swo
 *.o
