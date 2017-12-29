@@ -11,6 +11,7 @@ stringset* stringset_new(unsigned int initial_size){
     str_set->node_array = (node**)malloc((sizeof(node*) * initial_size)); //array of node pointers
     str_set->node_array_length = initial_size;
     unsigned int i = 0;
+
     for(i = 0; i < initial_size; i++){
         str_set->node_array[i] = NULL; //initialize every pointer to null
     }
