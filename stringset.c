@@ -32,13 +32,11 @@ void stringset_free(stringset *str_set){
 
 int stringset_add(stringset *str_set, const char *str){
     unsigned long hashcode = hash_code(str) % str_set->node_array_length;
-//    printf("%lu\n", hashcode);
-//    return hashcode;
     node *tmp = str_set->node_array[hashcode];
     while(tmp->next != NULL){
         if (strcmp(tmp->string, str) == 0)
             return 0;
     }
-    node_new(str, tmp);
+    list_insert_new_after(tmp, str);
     return 1;
 }
