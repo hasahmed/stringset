@@ -13,6 +13,7 @@ int main() {
     for (i = 0; i < s->node_array_length; i++) {
         printf("%s\n", s->node_array[i]->string);
     }
+    list_insert_new_after(s->node_array[0], "tacos");
     stringset_free(s);
 //    stringset *s = stringset_new(10);
 //    node *node_list = list_init();
