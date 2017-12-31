@@ -23,6 +23,7 @@ grind : $(EXE)
 
 servergrind : stringset_test
 	@./$(SERVER_GRIND) &
+	@./$(EXE)
 
 
 stringset.o : stringset.c stringset.h
