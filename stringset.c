@@ -5,6 +5,7 @@
 
 #include "node.h"
 #include "stringset.h"
+#include <string.h>
 #include "util.h"
 
 stringset* stringset_new(unsigned int initial_size){
@@ -26,4 +27,15 @@ void stringset_free(stringset *str_set){
     }
     free(str_set->node_array);
     free(str_set);
+}
+
+int stringset_add(stringset *str_set, const char *str){
+    int i = 0;
+    node *tmp = str_set->node_array;
+    while(tmp->next != NULL){
+        if (strcmp(tmp->string, str) == 0)
+            return 0;
+    }
+    node_new(str, tmp);
+    return 1;
 }

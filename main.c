@@ -10,6 +10,8 @@ int main() {
         s->node_array[i] = node_new("hello", NULL);
     }
     /*list_print(*s->node_array);*/
+    int result = stringset_add(s, "hello");
+    printf("%d\n", result);
     stringset_free(s);
 //    stringset *s = stringset_new(10);
 //    node *node_list = list_init();

@@ -15,9 +15,9 @@ struct string_set{
 typedef struct string_set stringset;
 stringset* stringset_new(unsigned int initial_size);
 void stringset_free(stringset *str_set);
-int stringset_add(const char* string);
-int stringset_remove(const char* string);
-int stringset_contains(const char* string);
+int stringset_add(stringset *str_set, const char* string);
+int stringset_remove(stringset *str_set, const char* string);
+int stringset_contains(stringset *str_set, const char* string);
 unsigned long hash_code(char *str);
 
 
