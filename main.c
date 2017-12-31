@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "stringset.h"
 
 int main() {
@@ -9,11 +10,20 @@ int main() {
     for (i = 0; i < s->node_array_length; i++) {
         s->node_array[i] = node_new("hello", NULL);
     }
+
+    int *x = (int*)malloc(sizeof(int) * 10);
+    for (i = 0; i < 10; i++){
+        x[i] = i;
+    }
+    for (i = 0; i < 10; i++){
+        printf("%d\n", x[i]);
+    }
+    free(x);
 //    node_new("taco", s->node_array[0]);
 //    node_free_list(s->node_array[0]);
 
     /*list_print(*s->node_array);*/
-    stringset_add(s, "tacos");
+//    stringset_add(s, "tacos");
 //    result = stringset_add(s, "tacos");
 //    printf("%d\n", result);
     stringset_free(s);
