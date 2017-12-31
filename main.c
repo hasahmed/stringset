@@ -18,7 +18,7 @@ int main() {
     for (i = 0; i < 10; i++){
         printf("%d\n", x[i]);
     }
-    free(x);
+//    free(x);
 //    node_new("taco", s->node_array[0]);
 //    node_free_list(s->node_array[0]);
 
