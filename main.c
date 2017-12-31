@@ -14,6 +14,7 @@ int main() {
         printf("%s\n", s->node_array[i]->string);
     }
     list_insert_new_last(s->node_array[0], "tacos");
+    list_insert_new_last(s->node_array[0], "tacos");
     stringset_free(s);
 //    stringset *s = stringset_new(10);
 //    node *node_list = list_init();
