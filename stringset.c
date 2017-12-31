@@ -9,8 +9,8 @@
 #include "util.h"
 
 stringset* stringset_new(unsigned int initial_size){
-    stringset *str_set = (stringset*) malloc(sizeof(stringset));
-    str_set->node_array = (node**)malloc((sizeof(node*) * initial_size)); //array of node pointers
+    stringset *str_set = (stringset*) malloc(sizeof(stringset)); //allocate the pointer for the whole string set
+    str_set->node_array = (node**)malloc((sizeof(node*) * initial_size)); // allocate the pointer for the node_array
     str_set->node_array_length = initial_size;
     unsigned int i = 0;
     for(i = 0; i < initial_size; i++){
@@ -30,7 +30,6 @@ void stringset_free(stringset *str_set){
 }
 
 int stringset_add(stringset *str_set, const char *str){
-    int i = 0;
     node *tmp = str_set->node_array[0];
     while(tmp->next != NULL){
         if (strcmp(tmp->string, str) == 0)
