@@ -9,7 +9,7 @@ int main() {
     for (i = 0; i < s->node_array_length; i++) {
         s->node_array[i] = node_new("hello", NULL);
     }
-    node_new("taco", s->node_array[0]);
+//    node_new("taco", s->node_array[0]);
 
     /*list_print(*s->node_array);*/
 //    int result = stringset_add(s, "tacos");
