@@ -13,7 +13,7 @@ int main() {
 //    node_free_list(s->node_array[0]);
 
     /*list_print(*s->node_array);*/
-//    int result = stringset_add(s, "tacos");
+    stringset_add(s, "tacos");
 //    result = stringset_add(s, "tacos");
 //    printf("%d\n", result);
     stringset_free(s);

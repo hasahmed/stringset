@@ -2,6 +2,7 @@
 // Created by Hasan Yusuf Ahmed on 11/19/17.
 //
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "node.h"
 #include "stringset.h"
@@ -30,6 +31,9 @@ void stringset_free(stringset *str_set){
 }
 
 int stringset_add(stringset *str_set, const char *str){
+    unsigned long hashcode = hash_code(str) % str_set->node_array_length;
+    printf("%lu\n", hashcode);
+    return hashcode;
     node *tmp = str_set->node_array[0];
     while(tmp->next != NULL){
         if (strcmp(tmp->string, str) == 0)

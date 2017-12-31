@@ -4,7 +4,7 @@
 
 #ifndef STRINGSET_UTIL_H
 #define STRINGSET_UTIL_H
-unsigned long hash_code(char *str);
+unsigned long hash_code(const char *str);
 void my_strcpy(char *dest, const char *src);
 int my_strlen(const char *str);
 

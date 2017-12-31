@@ -3,7 +3,7 @@
 //
 
 #include "util.h"
-unsigned long hash_code(char *str) { /* copied djb2 hashing algorithm */
+unsigned long hash_code(const char *str) { /* copied djb2 hashing algorithm */
     unsigned long hash = 5381;
     int c;
     while ((c = *str++))
