@@ -31,7 +31,7 @@ void stringset_free(stringset *str_set){
 
 int stringset_add(stringset *str_set, const char *str){
     int i = 0;
-    node *tmp = str_set->node_array;
+    node *tmp = str_set->node_array[0];
     while(tmp->next != NULL){
         if (strcmp(tmp->string, str) == 0)
             return 0;

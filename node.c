@@ -18,7 +18,7 @@ void node_init(node *n, char *string, node *next){
  * string: The character array to place in the new node
  * next:   The node that will come after this new node
  */
-node* node_new(char *string, node *next){
+node* node_new(const char *string, node *next){
     node *newnode = (node*)malloc(sizeof(node));
     newnode->string = (char*)malloc((sizeof(char) * my_strlen(string) + 1)); //+1 needed for null character
     my_strcpy(newnode->string, string);
