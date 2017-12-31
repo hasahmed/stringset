@@ -32,9 +32,6 @@ void node_free(node *n){
     free(n->string);
     free(n);
 }
-
-
-
 //node list stuff
 /**
  * Frees nodes starting at n unitl it reaches a node whos next is NULL
