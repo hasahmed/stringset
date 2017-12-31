@@ -44,6 +44,7 @@ void node_free_list(node *n){
     node *tmp = n;
     while(tmp != NULL){
         node *current = tmp;
+        printf("%s\n", current->string);
         tmp = tmp->next;
         node_free(current);
     }
