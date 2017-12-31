@@ -41,15 +41,23 @@ void node_free(node *n){
  * n: The begining of a linked list of nodes
  */
 void node_free_list(node *n){
-    if(!n) //if n is null, no need to free
+    node *tmp = n;
+    while(tmp != NULL){
+        node *current = tmp;
+        tmp = tmp->next;
+        node_free(current);
+    }
+    /*
+    if(!n) // if n is null, no need to free
         return;
-    if (!n->next) { //if head->next == NULL
+    if (!n->next) { //if n->next == NULL, base case
         node_free(n);
     }
     else {
         node_free_list(n->next);
         node_free(n);
     }
+     */
 }
 
 node* list_insert_new_after(node *node_to_go_after, char *string){
