@@ -47,8 +47,20 @@ int stringset_add(stringset *str_set, const char *str){
 int stringset_remove(stringset *str_set, const char *str) {
     unsigned long hashcode = hash_code(str) % str_set->node_array_length;
     node *tmp = str_set->node_array[hashcode];
+    node *prev = NULL;
     while(tmp != NULL){
+        if(strcmp(tmp->string, str) == 0) {
+            if (prev == NULL){
+                str_set->node_array[hashcode] = tmp->next;
+                node_free(tmp);
+                return 1;
+            }
+
+            list_remove_node(prev, tmp, str);
+            return 1;
+        }
+        prev = tmp;
         tmp = tmp->next;
     }
-    return 1;
+    return 0; // no such element existed, and hence was not removed
 }

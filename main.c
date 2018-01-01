@@ -19,6 +19,7 @@ int main() {
     stringset_add(s, "I love my wife Katherine Inez Ahmed");
     i = stringset_add(s, "I love my wife Katherine Inez Ahmed");
     i = stringset_add(s, "air heads");
+    stringset_remove(s, "air heads");
     printf("%d\n", i);
     stringset_free(s);
 //    stringset *s = stringset_new(10);

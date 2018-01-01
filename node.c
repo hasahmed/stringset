@@ -64,7 +64,7 @@ void list_print(node *n){
         list_print(n->next);
     }
 }
-void list_remvoe_node(node *prev, node *to_be_removed, const char *string) {
+void list_remove_node(node *prev, node *to_be_removed, const char *string) {
     prev->next = to_be_removed->next;
     node_free(to_be_removed);
 }
