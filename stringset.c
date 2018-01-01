@@ -43,3 +43,12 @@ int stringset_add(stringset *str_set, const char *str){
     list_insert_new_after(tmp, str);
     return 1;
 }
+
+int stringset_remove(stringset *str_set, const char *str) {
+    unsigned long hashcode = hash_code(str) % str_set->node_array_length;
+    node *tmp = str_set->node_array[hashcode];
+    while(tmp != NULL){
+        tmp = tmp->next;
+    }
+    return 1;
+}
