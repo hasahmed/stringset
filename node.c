@@ -46,7 +46,7 @@ void node_free_list(node *n){
     }
 }
 
-node* list_insert_new_after(node *node_to_go_after, char *string){
+node* list_insert_new_after(node *node_to_go_after, const char *string){
     node *newnode = node_new(string, node_to_go_after->next);
     node_to_go_after->next = newnode;
     return newnode;

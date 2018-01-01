@@ -18,7 +18,7 @@ node* node_null();
 
 
 //node list functions
-node* list_insert_new_after(node *node_to_go_after, char *string);
+node* list_insert_new_after(node *node_to_go_after, const char *string);
 node* list_insert_new_last(node *n, char *string);
 void list_print(node *n);
 node* list_init();

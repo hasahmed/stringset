@@ -36,7 +36,10 @@ int stringset_add(stringset *str_set, const char *str){
     while(tmp->next != NULL){
         if (strcmp(tmp->string, str) == 0)
             return 0;
+        tmp = tmp->next;
     }
+    if (strcmp(tmp->string, str) == 0)
+        return 0;
     list_insert_new_after(tmp, str);
     return 1;
 }
