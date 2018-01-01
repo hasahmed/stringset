@@ -17,9 +17,10 @@ int main() {
 //    list_insert_new_last(s->node_array[0], "tacos");
 //    list_insert_new_last(s->node_array[1], "tacos");
     stringset_add(s, "I love my wife Katherine Inez Ahmed");
-    i = stringset_add(s, "I love my wife Katherine Inez Ahmed");
-    i = stringset_add(s, "air heads");
+    stringset_add(s, "I love my wife Katherine Inez Ahmed");
+    stringset_add(s, "air heads");
     stringset_remove(s, "air heads");
+    i = stringset_remove(s, "air heads");
     printf("%d\n", i);
     stringset_free(s);
 //    stringset *s = stringset_new(10);
