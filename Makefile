@@ -24,7 +24,7 @@ grind : $(EXE)
 servergrind : stringset_test
 	@./$(SERVER_GRIND) &
 	@./$(EXE)
-	@sleep 10s cat grind.log
+	@sleep 10s ; cat grind.log
 
 
 stringset.o : stringset.c stringset.h
