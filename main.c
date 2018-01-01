@@ -13,9 +13,9 @@ int main() {
     for (i = 0; i < s->node_array_length; i++) {
         printf("%s\n", s->node_array[i]->string);
     }
-    list_insert_new_last(s->node_array[0], "tacos");
-    list_insert_new_last(s->node_array[0], "tacos");
-    list_insert_new_last(s->node_array[1], "tacos");
+//    list_insert_new_last(s->node_array[0], "tacos");
+//    list_insert_new_last(s->node_array[0], "tacos");
+//    list_insert_new_last(s->node_array[1], "tacos");
     stringset_add(s, "I love my wife Katherine Inez Ahmed");
     stringset_free(s);
 //    stringset *s = stringset_new(10);
