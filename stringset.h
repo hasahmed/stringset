@@ -13,10 +13,10 @@ struct string_set{
     node **node_array; //array of nodes
 };
 typedef struct string_set stringset;
-stringset* stringset_new(unsigned int initial_size);
+stringset* stringset_new(unsigned int initial_size, unsigned int load_factor);
 void stringset_free(stringset *str_set);
 int stringset_add(stringset *str_set, const char* string);
 int stringset_remove(stringset *str_set, const char* string);
-int stringset_contains(stringset *str_set, const char* string);
+int stringset_check(stringset *str_set, const char *str);
 
 #endif //STRINGSET_STRINGSET_H

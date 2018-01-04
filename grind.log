@@ -1,0 +1,54 @@
+Pseudo-terminal will not be allocated because stdin is not a terminal.
+Compiling...
+Compiling...
+Compiling...
+Compiling...
+Compiling...
+Done
+valgrind --leak-check=yes ./stringset_test
+==160798== Memcheck, a memory error detector
+==160798== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==160798== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info
+==160798== Command: ./stringset_test
+==160798== 
+==160798== Conditional jump or move depends on uninitialised value(s)
+==160798==    at 0x4C2DBB0: __strcmp_sse42 (vg_replace_strmem.c:845)
+==160798==    by 0x40079F: stringset_add (stringset.c:42)
+==160798==    by 0x400939: main (main.c:21)
+==160798== 
+==160798== Conditional jump or move depends on uninitialised value(s)
+==160798==    at 0x4C2DBB4: __strcmp_sse42 (vg_replace_strmem.c:845)
+==160798==    by 0x40079F: stringset_add (stringset.c:42)
+==160798==    by 0x400939: main (main.c:21)
+==160798== 
+==160798== Conditional jump or move depends on uninitialised value(s)
+==160798==    at 0x4C2DBB0: __strcmp_sse42 (vg_replace_strmem.c:845)
+==160798==    by 0x400866: stringset_remove (stringset.c:57)
+==160798==    by 0x40095B: main (main.c:23)
+==160798== 
+==160798== Conditional jump or move depends on uninitialised value(s)
+==160798==    at 0x4C2DBB4: __strcmp_sse42 (vg_replace_strmem.c:845)
+==160798==    by 0x400866: stringset_remove (stringset.c:57)
+==160798==    by 0x40095B: main (main.c:23)
+==160798== 
+==160798== Conditional jump or move depends on uninitialised value(s)
+==160798==    at 0x4C2DBB0: __strcmp_sse42 (vg_replace_strmem.c:845)
+==160798==    by 0x400866: stringset_remove (stringset.c:57)
+==160798==    by 0x40097D: main (main.c:25)
+==160798== 
+==160798== Conditional jump or move depends on uninitialised value(s)
+==160798==    at 0x4C2DBB4: __strcmp_sse42 (vg_replace_strmem.c:845)
+==160798==    by 0x400866: stringset_remove (stringset.c:57)
+==160798==    by 0x40097D: main (main.c:25)
+==160798== 
+1
+==160798== 
+==160798== HEAP SUMMARY:
+==160798==     in use at exit: 0 bytes in 0 blocks
+==160798==   total heap usage: 6 allocs, 6 frees, 134 bytes allocated
+==160798== 
+==160798== All heap blocks were freed -- no leaks are possible
+==160798== 
+==160798== For counts of detected and suppressed errors, rerun with: -v
+==160798== Use --track-origins=yes to see where uninitialised values come from
+==160798== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)

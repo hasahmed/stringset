@@ -9,7 +9,7 @@
 #include <string.h>
 #include "util.h"
 
-stringset* stringset_new(unsigned int initial_size){
+stringset* stringset_new(unsigned int initial_size, unsigned int load_factor){
     stringset *str_set = (stringset*) malloc(sizeof(stringset)); //allocate the pointer for the whole string set
     str_set->node_array = (node**)malloc((sizeof(node*) * initial_size)); // allocate the pointer for the node_array
     str_set->node_array_length = initial_size;
@@ -30,6 +30,17 @@ void stringset_free(stringset *str_set){
     free(str_set);
 }
 
+int stringset_check(stringset *str_set, const char *str) {
+    unsigned long hashcode = hash_code(str) % str_set->node_array_length;
+    node *tmp = str_set->node_array[hashcode];
+    while (tmp) {
+        if (strcmp(tmp->string, str) == 0)
+            return 1;
+        tmp = tmp->next;
+    }
+    return 0;
+}
+
 int stringset_add(stringset *str_set, const char *str){
     unsigned long hashcode = hash_code(str) % str_set->node_array_length;
     node *tmp = str_set->node_array[hashcode];
@@ -42,9 +53,11 @@ int stringset_add(stringset *str_set, const char *str){
         if (strcmp(tmp->string, str) == 0)
             return 0;
         list_insert_new_after(tmp, str);
+        str_set->num_elements++;
         return 1;
     } else {
         str_set->node_array[hashcode] = node_new(str, NULL);
+        str_set->num_elements++;
         return 1;
     }
 }
@@ -58,10 +71,12 @@ int stringset_remove(stringset *str_set, const char *str) {
             if (prev == NULL){
                 str_set->node_array[hashcode] = tmp->next;
                 node_free(tmp);
+                str_set->num_elements--;
                 return 1;
             }
 
             list_remove_node(prev, tmp, str);
+            str_set->num_elements--;
             return 1;
         }
         prev = tmp;
