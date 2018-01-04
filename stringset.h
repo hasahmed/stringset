@@ -8,15 +8,17 @@
 #include "node.h"
 
 struct string_set{
-    int node_array_length;
-    int num_elements; //the actual number of elements allocated
+    unsigned int node_array_length;
+    unsigned int num_elements; //the actual number of elements allocated
     node **node_array; //array of nodes
+    float load_factor;
 };
 typedef struct string_set stringset;
-stringset* stringset_new(unsigned int initial_size, unsigned int load_factor);
+stringset* stringset_new(unsigned int initial_size, float load_factor);
 void stringset_free(stringset *str_set);
 int stringset_add(stringset *str_set, const char* string);
 int stringset_remove(stringset *str_set, const char* string);
 int stringset_check(stringset *str_set, const char *str);
+void stringset_rehash(stringset *str_set);
 
 #endif //STRINGSET_STRINGSET_H

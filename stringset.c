@@ -9,10 +9,11 @@
 #include <string.h>
 #include "util.h"
 
-stringset* stringset_new(unsigned int initial_size, unsigned int load_factor){
+stringset* stringset_new(unsigned int initial_size, float load_factor){
     stringset *str_set = (stringset*) malloc(sizeof(stringset)); //allocate the pointer for the whole string set
     str_set->node_array = (node**)malloc((sizeof(node*) * initial_size)); // allocate the pointer for the node_array
     str_set->node_array_length = initial_size;
+    str_set->load_factor = load_factor;
     unsigned int i = 0;
     for(i = 0; i < initial_size; i++){
         str_set->node_array[i] = NULL; //initialize every pointer to null
@@ -83,4 +84,9 @@ int stringset_remove(stringset *str_set, const char *str) {
         tmp = tmp->next;
     }
     return 0; // no such element existed, and hence was not removed
+}
+
+void stringset_rehash(stringset *str_set) {
+    stringset *new_str_set = stringset_new(str_set->node_array_length * 2, str_set->load_factor);
+
 }

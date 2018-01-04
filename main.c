@@ -8,7 +8,7 @@ int main() {
     int (*chk)(stringset*, const char*) = &stringset_check;
     node *n = NULL;
     node_free_list(n);
-    stringset *s = stringset_new(5, NULL);
+    stringset *s = stringset_new(5, 0);
     // TODO: make it so that the string set doesn't need node_new to be called on every node before stringset_add is called
     int i = 0;
     stringset_add(s, "I love my wife Katherine Inez Ahmed");
