@@ -33,15 +33,20 @@ void stringset_free(stringset *str_set){
 int stringset_add(stringset *str_set, const char *str){
     unsigned long hashcode = hash_code(str) % str_set->node_array_length;
     node *tmp = str_set->node_array[hashcode];
-    while(tmp->next != NULL){
+    if (tmp) {
+        while (tmp->next != NULL) {
+            if (strcmp(tmp->string, str) == 0)
+                return 0;
+            tmp = tmp->next;
+        }
         if (strcmp(tmp->string, str) == 0)
             return 0;
-        tmp = tmp->next;
+        list_insert_new_after(tmp, str);
+        return 1;
+    } else {
+        str_set->node_array[hashcode] = node_new(str, NULL);
+        return 1;
     }
-    if (strcmp(tmp->string, str) == 0)
-        return 0;
-    list_insert_new_after(tmp, str);
-    return 1;
 }
 
 int stringset_remove(stringset *str_set, const char *str) {

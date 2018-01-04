@@ -6,13 +6,14 @@ int main() {
     node *n = NULL;
     node_free_list(n);
     stringset *s = stringset_new(5);
+    // TODO: make it so that the string set doesn't need node_new to be called on every node before stringset_add is called
     int i = 0;
-    for (i = 0; i < s->node_array_length; i++) {
-        s->node_array[i] = node_new("hello", NULL);
-    }
-    for (i = 0; i < s->node_array_length; i++) {
-        printf("%s\n", s->node_array[i]->string);
-    }
+//    for (i = 0; i < s->node_array_length; i++) {
+//        s->node_array[i] = node_new("hello", NULL);
+//    }
+//    for (i = 0; i < s->node_array_length; i++) {
+//        printf("%s\n", s->node_array[i]->string);
+//    }
 //    list_insert_new_last(s->node_array[0], "tacos");
 //    list_insert_new_last(s->node_array[0], "tacos");
 //    list_insert_new_last(s->node_array[1], "tacos");
