@@ -42,7 +42,7 @@ int stringset_check(stringset *str_set, const char *str) {
     return 0;
 }
 
-int stringset_add(stringset *str_set, const char *str){
+int stringset_add(stringset *str_set, const char *str) {
     unsigned long hashcode = hash_code(str) % str_set->node_array_length;
     node *tmp = str_set->node_array[hashcode];
     if (tmp) {
@@ -85,8 +85,36 @@ int stringset_remove(stringset *str_set, const char *str) {
     }
     return 0; // no such element existed, and hence was not removed
 }
+int stringset_deepcopy(stringset *dest, stringset *src) {
+    if (dest->node_array_length <= src->node_array_length)
+        return 0;
 
+}
+
+/**
+ * Utility that copies one stringset's pointers into another one
+ * *NOTE* This does not actually copy the string set's elements, just pointers to them,
+ * use stringset_deepcopy if you want to actually copy the elements
+ * @param dest pointer to the string set that we are going to copy into
+ * @param src pointer to string set we are copying
+ * @return 0 if the dest string set's size is smaller than the src's, 1 otherwise
+ */
+int stringset_copy(stringset *dest, stringset *src) {
+    if (dest->node_array_length <= src->node_array_length)
+        return 0;
+    int i;
+    for (i = 0; i < src->node_array_length; i++){
+        dest->node_array[i] = src->node_array[i];
+    }
+}
+
+/**
+ * Doubles the size of the stringset and rehashes all of the elements inside it to fit the new size
+ * @param str_set The string set to rehash
+ */
 void stringset_rehash(stringset *str_set) {
-    stringset *new_str_set = stringset_new(str_set->node_array_length * 2, str_set->load_factor);
+    stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
+                                           str_set->load_factor); //string set double the size
+
 
 }

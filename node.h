@@ -13,6 +13,7 @@ typedef struct node{
 node* node_new(const char *string, node *next);
 void node_free(node *n);
 void node_free_list(node *n);
+node * node_copy(node *src);
 void node_init(node *n, char *string, node *next);
 node* node_null();
 

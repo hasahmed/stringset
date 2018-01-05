@@ -25,6 +25,7 @@ node* node_new(const char *string, node *next){
     newnode->next = next;
     return newnode;
 }
+
 /**
  * n: The node to free
  */

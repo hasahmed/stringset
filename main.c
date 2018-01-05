@@ -4,8 +4,8 @@
 
 int main() {
     int (*add)(stringset*, const char*) = &stringset_add;
-    int (*rm)(stringset*, const char*) = &stringset_remove;
-    int (*chk)(stringset*, const char*) = &stringset_check;
+//    int (*rm)(stringset*, const char*) = &stringset_remove;
+//    int (*chk)(stringset*, const char*) = &stringset_check;
     node *n = NULL;
     node_free_list(n);
     stringset *s = stringset_new(5, 0);
@@ -24,6 +24,8 @@ int main() {
     i = stringset_check(s, "monster taco lettuce butt");
     i = stringset_check(s, "monster taco lettuce butt");
     i = stringset_check(s, "fart butt monkey cheese");
+    stringset *s_copy = NULL;
+    stringset_copy(s_copy, s);
     printf("%d\n", s->num_elements);
     stringset_free(s);
     return 0;
