@@ -24,7 +24,8 @@ int main() {
     i = stringset_check(s, "monster taco lettuce butt");
     i = stringset_check(s, "monster taco lettuce butt");
     i = stringset_check(s, "fart butt monkey cheese");
-    stringset *s_copy = NULL;
+//    stringset *s_copy = NULL;
+    stringset *s_copy = stringset_new(s->node_array_length, s->load_factor);
     stringset_copy(s_copy, s);
     printf("%d\n", s->num_elements);
     stringset_free(s);

@@ -89,6 +89,7 @@ int stringset_deepcopy(stringset *dest, stringset *src) {
     if (dest->node_array_length <= src->node_array_length)
         return 0;
 
+    return 0; //delete this
 }
 
 /**
@@ -104,8 +105,11 @@ int stringset_copy(stringset *dest, stringset *src) {
         return 0;
     int i;
     for (i = 0; i < src->node_array_length; i++){
-        dest->node_array[i] = src->node_array[i];
+        dest->node_array[i] = node_new_ptr();
+        *dest->node_array[i] = *src->node_array[i];
     }
+
+    return 0; //delete this
 }
 
 /**
@@ -113,8 +117,8 @@ int stringset_copy(stringset *dest, stringset *src) {
  * @param str_set The string set to rehash
  */
 void stringset_rehash(stringset *str_set) {
-    stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
-                                           str_set->load_factor); //string set double the size
+//    stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
+//                                           str_set->load_factor); //string set double the size
 
 
 }

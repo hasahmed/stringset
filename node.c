@@ -27,6 +27,14 @@ node* node_new(const char *string, node *next){
 }
 
 /**
+ * Simply alocates the space for a node pointer
+ * @return
+ */
+node* node_new_ptr(){
+    return (node*)malloc(sizeof(node*));
+}
+
+/**
  * n: The node to free
  */
 void node_free(node *n){
