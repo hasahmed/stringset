@@ -101,13 +101,14 @@ int stringset_deepcopy(stringset *dest, stringset *src) {
  * @return 0 if the dest string set's size is smaller than the src's, 1 otherwise
  */
 int stringset_copy(stringset *dest, stringset *src) {
-    if (dest->node_array_length <= src->node_array_length)
+    if (dest->node_array_length < src->node_array_length)
         return 0;
     int i;
     for (i = 0; i < src->node_array_length; i++){
         dest->node_array[i] = node_new_ptr();
-        *dest->node_array[i] = *src->node_array[i];
+        dest->node_array[i] = src->node_array[i];
     }
+    dest->num_elements = src->num_elements;
     return 1;
 }
 
