@@ -65,7 +65,7 @@ void node_free(node *n){
  */
 void node_free_list(node *n){
     node *tmp = n;
-    while(tmp != NULL){
+    while(tmp){
         node *current = tmp;
         tmp = tmp->next;
         node_free(current);
