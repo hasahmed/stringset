@@ -20,13 +20,12 @@ int main() {
     stringset_check(s, "monster taco lettuce butt");
     stringset_check(s, "monster taco lettuce butt");
     i = stringset_check(s, "fart butt monkey cheese");
-//    stringset *s_copy = stringset_new(s->node_array_length, s->load_factor);
-//    stringset_copy(s_copy, s);
-//    add(s_copy, "Katherine is my love");
     printf("%d\n", s->num_elements);
     stringset_remove(s, "monster taco lettuce butt");
+    stringset_remove(s, "I love my wife Katherine Inez Ahmed");
+    stringset_remove(s, "air heads");
+    stringset_remove(s, "tacos");
     printf("%d\n", s->num_elements);
     stringset_free(s);
-//    stringset_free(s_copy);
     return 0;
 }
