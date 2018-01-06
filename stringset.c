@@ -132,24 +132,24 @@ int stringset_remove(stringset *str_set, const char *str) {
 void stringset_rehash(stringset *str_set) {
     stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
                                            str_set->load_factor); //stringset double the size of original
-    stringset_free(new_str_set);
-//    int i;
-//    for (i = 0; i < str_set->node_array_length; i++){
-//        node *tmp = str_set->node_array[i];
-//        if (tmp) { //if tmp is not null
-//            while (tmp->next) { //loop as long as tmp->next isn't NULL
-//                unsigned long new_hash = hash_code(new_str_set, tmp->string); // get the new hash according to new size
-//                //check to see if the new stringset's node_array entry is NULL
-//                if (new_str_set->node_array[new_hash]) { //case that it is NOT NULL
-//                    list_insert_new_last(new_str_set->node_array[new_hash], tmp->string);
-//                } else { // case that that node_array entry IS NULL
-//                    new_str_set->node_array[new_hash] = node_new(tmp->string, NULL);
-//                }
-//                tmp = tmp->next;
-//            }
-//        }
-//    }
-//    str_set->node_array_length = new_str_set->node_array_length;
-//    str_set->node_array = new_str_set->node_array;
-//    stringset_free(new_str_set);
+    int i;
+    for (i = 0; i < str_set->node_array_length; i++){
+        node *tmp = str_set->node_array[i];
+        if (tmp) { //if tmp is not null
+            while (tmp->next) { //loop as long as tmp->next isn't NULL
+                unsigned long new_hash = hash_code(new_str_set, tmp->string); // get the new hash according to new size
+                //check to see if the new stringset's node_array entry is NULL
+                if (new_str_set->node_array[new_hash]) { //case that it is NOT NULL
+                    list_insert_new_last(new_str_set->node_array[new_hash], tmp->string);
+                } else { // case that that node_array entry IS NULL
+                    new_str_set->node_array[new_hash] = node_new(tmp->string, NULL);
+                }
+                tmp = tmp->next;
+            }
+        }
+    }
+    str_set->node_array_length = new_str_set->node_array_length;
+    str_set->node_array = new_str_set->node_array;
+//    free(str_set->node_array);
+    free(new_str_set);
 }
