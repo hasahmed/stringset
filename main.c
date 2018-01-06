@@ -21,11 +21,14 @@ int main() {
     stringset_check(s, "monster taco lettuce butt");
     i = stringset_check(s, "fart butt monkey cheese");
     printf("%d\n", s->num_elements);
-    stringset_remove(s, "monster taco lettuce butt");
-    stringset_remove(s, "I love my wife Katherine Inez Ahmed");
-    stringset_remove(s, "air heads");
-    stringset_remove(s, "tacos");
+//    stringset_remove(s, "monster taco lettuce butt");
+//    stringset_remove(s, "I love my wife Katherine Inez Ahmed");
+//    stringset_remove(s, "air heads");
+//    stringset_remove(s, "tacos");
+    printf("%d\n", s->node_array_length);
     printf("%d\n", s->num_elements);
+    stringset_rehash(s);
+    printf("%d\n", s->node_array_length);
     stringset_free(s);
     return 0;
 }

@@ -135,5 +135,7 @@ void stringset_rehash(stringset *str_set) {
             }
         }
     }
-
+    str_set->node_array_length = new_str_set->node_array_length;
+    str_set->node_array = new_str_set->node_array;
+    free(new_str_set);
 }
