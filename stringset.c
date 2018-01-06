@@ -154,5 +154,5 @@ void stringset_rehash(stringset *str_set) {
 //    free(str_set->node_array);
     str_set->node_array = new_str_set->node_array;
 //    free(new_str_set);
-    stringset_free(str_set);
+    stringset_free(new_str_set);
 }
