@@ -141,7 +141,7 @@ void stringset_rehash(stringset *str_set) {
                 //check to see if the new stringset's node_array entry is NULL
                 if (new_str_set->node_array[new_hash]) { //case that it is NOT NULL
                     list_insert_new_last(new_str_set->node_array[new_hash], tmp->string);
-                } else { // case that that  node_array entry IS NULL
+                } else { // case that that node_array entry IS NULL
                     new_str_set->node_array[new_hash] = node_new(tmp->string, NULL);
                 }
                 tmp = tmp->next;
@@ -150,5 +150,5 @@ void stringset_rehash(stringset *str_set) {
     }
     str_set->node_array_length = new_str_set->node_array_length;
     str_set->node_array = new_str_set->node_array;
-    stringset_free(new_str_set);
+    free(new_str_set);
 }
