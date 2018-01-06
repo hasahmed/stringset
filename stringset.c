@@ -64,7 +64,7 @@ int stringset_add(stringset *str_set, const char *str) {
 }
 
 int stringset_remove(stringset *str_set, const char *str) {
-    unsigned long hashcode = hash_code(NULL, str) % str_set->node_array_length;
+    unsigned long hashcode = hash_code(str_set, str) % str_set->node_array_length;
     node *tmp = str_set->node_array[hashcode];
     node *prev = NULL;
     while(tmp != NULL){
