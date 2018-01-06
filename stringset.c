@@ -135,21 +135,22 @@ void stringset_rehash(stringset *str_set) {
     int i;
     for (i = 0; i < str_set->node_array_length; i++){
         node *tmp = str_set->node_array[i];
-        if (tmp) { //if tmp is not null
+        if (tmp) { // if array entry i is not null
             while (tmp->next) { //loop as long as tmp->next isn't NULL
                 unsigned long new_hash = hash_code(new_str_set, tmp->string); // get the new hash according to new size
-                //check to see if the new stringset's node_array entry is NULL
+                //check to see if the new stringset's node_array entry new_hash is NULL
+                node *next = tmp->next; //save tmp's next because we are going to reassign the pointer
                 if (new_str_set->node_array[new_hash]) { //case that it is NOT NULL
-                    list_insert_new_last(new_str_set->node_array[new_hash], tmp->string);
+                    node_list_insert_before(tmp, new_str_set->node_array[new_hash]);
                 } else { // case that that node_array entry IS NULL
-                    new_str_set->node_array[new_hash] = node_new(tmp->string, NULL);
+                    new_str_set->node_array[new_hash] = tmp;
+                    tmp->next = NULL; //null because we know that this is the first in the list
                 }
-                tmp = tmp->next;
+                tmp = next;
             }
-        }
+        } //else array entry i IS null so ignore it
     }
     str_set->node_array_length = new_str_set->node_array_length;
     str_set->node_array = new_str_set->node_array;
-//    free(str_set->node_array);
     free(new_str_set);
 }

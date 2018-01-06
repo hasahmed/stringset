@@ -16,6 +16,7 @@ node *node_new_duplicate(node *n, node *next);
 void node_free(node *n);
 void node_free_list(node *n);
 node * node_copy(node *src);
+void node_list_insert_before(node *node_to_insert, node *node_to_go_before);
 void node_init(node *n, char *string, node *next);
 node* node_null();
 

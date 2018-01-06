@@ -94,3 +94,12 @@ void list_remove_node(node *prev, node *to_be_removed, const char *string) {
     prev->next = to_be_removed->next;
     node_free(to_be_removed);
 }
+
+/**
+ * Verbose wrapper function to reordering a pointer
+ * @param node_to_insert
+ * @param node_to_go_before
+ */
+void node_list_insert_before(node *node_to_insert, node *node_to_go_before){
+    node_to_insert->next = node_to_go_before;
+}
