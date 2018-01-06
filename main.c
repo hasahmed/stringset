@@ -28,7 +28,7 @@ int main() {
     printf("%d\n", s->node_array_length);
     printf("%d\n", s->num_elements);
     stringset_rehash(s);
-    printf("%d\n", s->node_array_length);
-    stringset_free(s);
+//    printf("%d\n", s->node_array_length);
+//    stringset_free(s);
     return 0;
 }
