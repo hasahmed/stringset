@@ -25,6 +25,8 @@ int main() {
 //    add(s_copy, "Katherine is my love");
     printf("%d\n", s_copy->num_elements);
     stringset_free(s);
+    free(s_copy->node_array);
+    free(s_copy);
 //    stringset_free(s_copy);
     return 0;
 }
