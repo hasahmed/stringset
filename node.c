@@ -26,9 +26,26 @@ node* node_new(const char *string, node *next){
     return newnode;
 }
 
+
 /**
- * Simply alocates the space for a node pointer
+ *
+ * The node is duplicated without n's next pointer duplicated. This is basically a wrapper around strcpy.
+ * This is used in rehash
+ * @param n the node whose contents we will be duplicating
  * @return
+ */
+node *node_new_duplicate(node *n, node *next) {
+    node *newnode = (node*)malloc(sizeof(node));
+    newnode->string = (char*)malloc((sizeof(char) * my_strlen(n->string) + 1)); //+1 needed for null character
+    my_strcpy(newnode->string, n->string);
+    newnode->next = next;
+    return newnode;
+
+}
+
+/**
+ * Simply allocates the space for a node pointer
+ * @return pointer to newly allocated memory
  */
 node* node_new_ptr(){
     return (node*)malloc(sizeof(node*));

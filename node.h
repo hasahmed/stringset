@@ -11,11 +11,12 @@ typedef struct node{
 
 //node functions
 node* node_new(const char *string, node *next);
+node* node_new_ptr();
+node *node_new_duplicate(node *n, node *next);
 void node_free(node *n);
 void node_free_list(node *n);
 node * node_copy(node *src);
 void node_init(node *n, char *string, node *next);
-node* node_new_ptr();
 node* node_null();
 
 

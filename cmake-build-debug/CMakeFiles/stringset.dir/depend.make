@@ -7,6 +7,7 @@ CMakeFiles/stringset.dir/main.c.o: ../stringset.h
 
 CMakeFiles/stringset.dir/node.c.o: ../node.c
 CMakeFiles/stringset.dir/node.c.o: ../node.h
+CMakeFiles/stringset.dir/node.c.o: ../stringset.h
 CMakeFiles/stringset.dir/node.c.o: ../util.h
 
 CMakeFiles/stringset.dir/stringset.c.o: ../node.h
@@ -14,6 +15,8 @@ CMakeFiles/stringset.dir/stringset.c.o: ../stringset.c
 CMakeFiles/stringset.dir/stringset.c.o: ../stringset.h
 CMakeFiles/stringset.dir/stringset.c.o: ../util.h
 
+CMakeFiles/stringset.dir/util.c.o: ../node.h
+CMakeFiles/stringset.dir/util.c.o: ../stringset.h
 CMakeFiles/stringset.dir/util.c.o: ../util.c
 CMakeFiles/stringset.dir/util.c.o: ../util.h
 
