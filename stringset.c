@@ -130,6 +130,7 @@ int stringset_remove(stringset *str_set, const char *str) {
  * @param str_set The string set to rehash
  */
 void stringset_rehash(stringset *str_set) {
+    /*
     stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
                                            str_set->load_factor); //stringset double the size of original
     int i;
@@ -154,6 +155,8 @@ void stringset_rehash(stringset *str_set) {
     free(str_set->node_array); // no longer need old pointer to old node ordering
     str_set->node_array = new_str_set->node_array;
 //    free(new_str_set);
+    if(new_str_set->node_array[i])
     free(new_str_set);
     stringset_free(str_set);
+     */
 }
