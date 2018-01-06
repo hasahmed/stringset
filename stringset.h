@@ -22,5 +22,6 @@ int stringset_check(stringset *str_set, const char *str);
 void stringset_rehash(stringset *str_set);
 //int stringset_copy(stringset *dest, stringset *src);
 //int stringset_deepcopy(stringset *dest, stringset *src);
+void stringset_free_lite(stringset *str_set);
 
 #endif //STRINGSET_STRINGSET_H

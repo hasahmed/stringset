@@ -31,6 +31,19 @@ void stringset_free(stringset *str_set){
     free(str_set);
 }
 
+/**
+ * Frees serface pointers
+ * @param str_set
+ */
+void stringset_free_lite(stringset *str_set) {
+    int i = 0;
+    for (i = 0; i < str_set->node_array_length; i++){
+        node_free_list(str_set->node_array[i]);
+    }
+    free(str_set->node_array);
+    free(str_set);
+}
+
 int stringset_check(stringset *str_set, const char *str) {
     unsigned long hashcode = hash_code(str_set, str);
     node *tmp = str_set->node_array[hashcode];
@@ -137,5 +150,5 @@ void stringset_rehash(stringset *str_set) {
     }
     str_set->node_array_length = new_str_set->node_array_length;
     str_set->node_array = new_str_set->node_array;
-    free(new_str_set);
+    stringset_free(new_str_set);
 }
