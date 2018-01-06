@@ -85,12 +85,12 @@ int stringset_remove(stringset *str_set, const char *str) {
     }
     return 0; // no such element existed, and hence was not removed
 }
-int stringset_deepcopy(stringset *dest, stringset *src) {
-    if (dest->node_array_length <= src->node_array_length)
-        return 0;
-
-    return 0; //delete this
-}
+//int stringset_deepcopy(stringset *dest, stringset *src) {
+//    if (dest->node_array_length <= src->node_array_length)
+//        return 0;
+//
+//    return 0; //delete this
+//}
 
 /**
  * Utility that copies one stringset's pointers into another one
@@ -100,17 +100,17 @@ int stringset_deepcopy(stringset *dest, stringset *src) {
  * @param src pointer to string set we are copying
  * @return 0 if the dest string set's size is smaller than the src's, 1 otherwise
  */
-int stringset_copy(stringset *dest, stringset *src) {
-    if (dest->node_array_length < src->node_array_length)
-        return 0;
-    int i;
-    for (i = 0; i < src->node_array_length; i++){
-        dest->node_array[i] = node_new_ptr();
-        dest->node_array[i] = src->node_array[i];
-    }
-    dest->num_elements = src->num_elements;
-    return 1;
-}
+//int stringset_copy(stringset *dest, stringset *src) {
+//    if (dest->node_array_length < src->node_array_length)
+//        return 0;
+//    int i;
+//    for (i = 0; i < src->node_array_length; i++){
+//        dest->node_array[i] = node_new_ptr();
+//        dest->node_array[i] = src->node_array[i];
+//    }
+//    dest->num_elements = src->num_elements;
+//    return 1;
+//}
 
 /**
  * Doubles the size of the stringset and rehashes all of the elements inside it to fit the new size
