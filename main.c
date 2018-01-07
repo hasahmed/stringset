@@ -7,6 +7,7 @@ int main() {
 //    int (*rm)(stringset*, const char*) = &stringset_remove;
 //    int (*chk)(stringset*, const char*) = &stringset_check;
     stringset *s = stringset_new(1, 0);
+    stringset_rehash(s);
 //    int i = 0;
 //    stringset_add(s, "I love my wife Katherine Inez Ahmed");
 //    stringset_add(s, "I love my wife Katherine Inez Ahmed");

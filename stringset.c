@@ -151,11 +151,10 @@ void stringset_rehash(stringset *str_set) {
         } //else array entry i IS null so ignore it
     }
     // we've gotten to the end so now all that is left to do is reassign pointers
-    str_set->node_array_length = new_str_set->node_array_length;
-    free(str_set->node_array); // no longer need old pointer to old node ordering
-    str_set->node_array = new_str_set->node_array;
+//    str_set->node_array_length = new_str_set->node_array_length;
+//    free(str_set->node_array); // no longer need old pointer to old node ordering
+//    str_set->node_array = new_str_set->node_array;
 //    free(new_str_set);
-    if(new_str_set->node_array[i])
-    free(new_str_set);
-    stringset_free(str_set);
+//    free(new_str_set);
+//    stringset_free(str_set);
 }
