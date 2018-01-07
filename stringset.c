@@ -130,7 +130,6 @@ int stringset_remove(stringset *str_set, const char *str) {
  * @param str_set The string set to rehash
  */
 void stringset_rehash(stringset *str_set) {
-    /*
     stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
                                            str_set->load_factor); //stringset double the size of original
     int i;
@@ -142,7 +141,7 @@ void stringset_rehash(stringset *str_set) {
                 //check to see if the new stringset's node_array entry new_hash is NULL
                 node *next = tmp->next; //save tmp's next because we are going to reassign the pointer
                 if (new_str_set->node_array[new_hash]) { //case that it is NOT NULL
-                    node_list_insert_before(tmp, new_str_set->node_array[new_hash]);
+                    node_list_insert_before(tmp, new_str_set->node_array[new_hash]); //we want it to go before the node thats already there
                 } else { // case that that node_array entry IS NULL
                     new_str_set->node_array[new_hash] = tmp;
                     tmp->next = NULL; //null because we know that this is the first in the list
@@ -151,6 +150,7 @@ void stringset_rehash(stringset *str_set) {
             }
         } //else array entry i IS null so ignore it
     }
+    // we've gotten to the end so now all that is left to do is reassign pointers
     str_set->node_array_length = new_str_set->node_array_length;
     free(str_set->node_array); // no longer need old pointer to old node ordering
     str_set->node_array = new_str_set->node_array;
@@ -158,5 +158,4 @@ void stringset_rehash(stringset *str_set) {
     if(new_str_set->node_array[i])
     free(new_str_set);
     stringset_free(str_set);
-     */
 }
