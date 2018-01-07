@@ -15,7 +15,7 @@ int main() {
 //    printf("%d\n", s->num_elements);
     stringset_add(s, "air heads");
     stringset_add(s, "ir heads");
-//    stringset_add(s, "r heads");
+    stringset_add(s, "r heads");
 //    stringset_add(s, " heads");
 //    stringset_add(s, "heads");
 //    stringset_add(s, "eads");
