@@ -8,7 +8,12 @@ int main() {
 //    int (*chk)(stringset*, const char*) = &stringset_check;
     stringset *s = stringset_new(1, 0);
     stringset_add(s, "hello");
+    int i = 0;
+    i = stringset_check(s, "hello");
+    printf("%d\n", i);
     stringset_rehash(s);
+    i = stringset_check(s, "hello");
+    printf("%d\n", i);
 //    int i = 0;
 //    stringset_add(s, "I love my wife Katherine Inez Ahmed");
 //    stringset_add(s, "I love my wife Katherine Inez Ahmed");

@@ -135,20 +135,18 @@ void stringset_rehash(stringset *str_set) {
     int i;
     for (i = 0; i < str_set->node_array_length; i++){
         node *tmp = str_set->node_array[i];
-        if (tmp) { // if array entry i is not null
-            while (tmp->next) { //loop as long as tmp->next isn't NULL
-                unsigned long new_hash = hash_code(new_str_set, tmp->string); // get the new hash according to new size
-                //check to see if the new stringset's node_array entry new_hash is NULL
-                node *next = tmp->next; //save tmp's next because we are going to reassign the pointer
-                if (new_str_set->node_array[new_hash]) { //case that it is NOT NULL
-                    node_list_insert_before(tmp, new_str_set->node_array[new_hash]); //we want it to go before the node thats already there
-                } else { // case that that node_array entry IS NULL
-                    new_str_set->node_array[new_hash] = tmp;
-                    tmp->next = NULL; //null because we know that this is the first in the list
-                }
-                tmp = next;
+        while (tmp) { //loop as long as tmp->next isn't NULL
+            unsigned long new_hash = hash_code(new_str_set, tmp->string); // get the new hash according to new size
+            //check to see if the new stringset's node_array entry new_hash is NULL
+            node *next = tmp->next; //save tmp's next because we are going to reassign the pointer
+            if (new_str_set->node_array[new_hash]) { //case that it is NOT NULL
+                node_list_insert_before(tmp, new_str_set->node_array[new_hash]); //we want it to go before the node thats already there
+            } else { // case that that node_array entry IS NULL
+                new_str_set->node_array[new_hash] = tmp;
+                tmp->next = NULL; //null because we know that this is the first in the list
             }
-        } //else array entry i IS null so ignore it
+            tmp = next;
+        }
     }
     free(str_set->node_array);
     str_set->node_array = new_str_set->node_array;
