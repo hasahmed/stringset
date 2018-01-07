@@ -13,7 +13,7 @@ stringset* stringset_new(unsigned int initial_size, float load_factor){
     stringset *str_set = (stringset*) malloc(sizeof(stringset)); //allocate the pointer for the whole string set
     str_set->node_array = (node**)malloc((sizeof(node*) * initial_size)); // allocate the pointer for the node_array
     str_set->node_array_length = initial_size;
-    str_set->load_factor = load_factor;
+    str_set->load_factor = (load_factor <= 0) ? 0.75f : load_factor;
     unsigned int i = 0;
     for(i = 0; i < initial_size; i++){
         str_set->node_array[i] = NULL; //initialize every pointer to null
@@ -55,13 +55,11 @@ int stringset_check(stringset *str_set, const char *str) {
     return 0;
 }
 float stringset_load_value(stringset *str_set){
-    return str_set->load_factor * (float)str_set->num_elements;
+    return str_set->load_factor * (float)str_set->node_array_length;
 }
 
 int stringset_add(stringset *str_set, const char *str) {
-//    printf("%d\n", str_set->num_elements);
-//    printf("%f\n", stringset_load_value(str_set));
-    if (stringset_load_value(str_set) >= str_set->load_factor)
+    if (str_set->num_elements >= stringset_load_value(str_set))
         stringset_rehash(str_set);
 
     unsigned long hashcode = hash_code(str_set, str);
@@ -138,7 +136,8 @@ int stringset_remove(stringset *str_set, const char *str) {
  * @param str_set The string set to rehash
  */
 void stringset_rehash(stringset *str_set) {
-//    puts("rehashing");
+    puts("rehashing");
+    unsigned int num_elements = str_set->num_elements;
     stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
                                            str_set->load_factor); //stringset double the size of original
     int i;
@@ -157,7 +156,7 @@ void stringset_rehash(stringset *str_set) {
             tmp = next;
         }
     }
-    str_set->num_elements = new_str_set->num_elements;
+    str_set->num_elements = num_elements;
     str_set->node_array_length = new_str_set->node_array_length;
     free(str_set->node_array);
     str_set->node_array = new_str_set->node_array;
