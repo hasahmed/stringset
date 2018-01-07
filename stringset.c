@@ -88,7 +88,7 @@ int stringset_remove(stringset *str_set, const char *str) {
     unsigned long hashcode = hash_code(str_set, str) % str_set->node_array_length;
     node *tmp = str_set->node_array[hashcode];
     node *prev = NULL;
-    while(tmp != NULL){
+    while (tmp) {
         if(strcmp(tmp->string, str) == 0) {
             if (prev == NULL){
                 str_set->node_array[hashcode] = tmp->next;
@@ -138,7 +138,7 @@ int stringset_remove(stringset *str_set, const char *str) {
  * @param str_set The string set to rehash
  */
 void stringset_rehash(stringset *str_set) {
-    puts("rehashing");
+//    puts("rehashing");
     stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
                                            str_set->load_factor); //stringset double the size of original
     int i;
