@@ -16,7 +16,7 @@ int main() {
     stringset_add(s, "air heads");
     stringset_add(s, "ir heads");
     stringset_add(s, "r heads");
-//    stringset_add(s, " heads");
+    stringset_add(s, " heads");
 //    stringset_add(s, "heads");
 //    stringset_add(s, "eads");
 //    stringset_add(s, "ads");
