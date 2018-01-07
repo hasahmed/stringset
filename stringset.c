@@ -54,8 +54,16 @@ int stringset_check(stringset *str_set, const char *str) {
     }
     return 0;
 }
+float stringset_load_value(stringset *str_set){
+    return str_set->load_factor * (float)str_set->num_elements;
+}
 
 int stringset_add(stringset *str_set, const char *str) {
+//    printf("%d\n", str_set->num_elements);
+//    printf("%f\n", stringset_load_value(str_set));
+    if (stringset_load_value(str_set) >= str_set->load_factor)
+        stringset_rehash(str_set);
+
     unsigned long hashcode = hash_code(str_set, str);
     node *tmp = str_set->node_array[hashcode];
     if (tmp) {
@@ -130,6 +138,7 @@ int stringset_remove(stringset *str_set, const char *str) {
  * @param str_set The string set to rehash
  */
 void stringset_rehash(stringset *str_set) {
+    puts("rehashing");
     stringset *new_str_set = stringset_new(str_set->node_array_length * 2,
                                            str_set->load_factor); //stringset double the size of original
     int i;
@@ -148,16 +157,9 @@ void stringset_rehash(stringset *str_set) {
             tmp = next;
         }
     }
+    str_set->num_elements = new_str_set->num_elements;
     str_set->node_array_length = new_str_set->node_array_length;
     free(str_set->node_array);
     str_set->node_array = new_str_set->node_array;
     free(new_str_set);
-//    free(str_set->node_array);
-    // we've gotten to the end so now all that is left to do is reassign pointers
-//    str_set->node_array_length = new_str_set->node_array_length;
-//    free(str_set->node_array); // no longer need old pointer to old node ordering
-//    str_set->node_array = new_str_set->node_array;
-//    free(new_str_set);
-//    free(new_str_set);
-//    stringset_free(str_set);
 }
