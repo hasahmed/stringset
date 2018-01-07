@@ -6,12 +6,13 @@ int main() {
 //    int (*add)(stringset*, const char*) = &stringset_add;
 //    int (*rm)(stringset*, const char*) = &stringset_remove;
 //    int (*chk)(stringset*, const char*) = &stringset_check;
-    stringset *s = stringset_new(1, 0);
+    stringset *s = stringset_new(2, 0);
     stringset_add(s, "hello");
     int i = 0;
     i = stringset_check(s, "hello");
     printf("%d\n", i);
     stringset_rehash(s);
+    stringset_add(s, "hellos");
     i = stringset_check(s, "hello");
     printf("%d\n", i);
 //    int i = 0;
