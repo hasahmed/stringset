@@ -22,7 +22,7 @@ int main() {
     stringset_add(s, "ads");
     stringset_add(s, "ds");
     stringset_add(s, "s");
-    stringset_add(s, "");
+    stringset_add(s, " ");
     stringset_add(s, "j");
     printf("elements: %u\n", s->num_elements);
     printf("length: %u\n", s->node_array_length);
