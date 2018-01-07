@@ -148,6 +148,7 @@ void stringset_rehash(stringset *str_set) {
             tmp = next;
         }
     }
+    str_set->node_array_length = new_str_set->node_array_length;
     free(str_set->node_array);
     str_set->node_array = new_str_set->node_array;
     free(new_str_set);
