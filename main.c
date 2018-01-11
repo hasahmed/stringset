@@ -19,6 +19,7 @@ int main() {
 //    stringset_add(s, " heads");
 //    stringset_add(s, " heads");
     int i = stringset_add(s, " heads");
+    i = stringset_add(s, "tacos");
     printf("result: %d\n", i);
     printf("elements: %u\n", s->num_elements);
     printf("length: %u\n", s->node_array_length);
