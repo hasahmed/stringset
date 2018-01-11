@@ -14,7 +14,6 @@
     <list default="true" id="3fed409a-c6e1-4472-b103-06b83bdf1be1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grind.log" afterPath="$PROJECT_DIR$/grind.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stringset.c" afterPath="$PROJECT_DIR$/stringset.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +25,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
@@ -38,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stringset.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stringset.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stringset.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
               <folding>
                 <element signature="e#51#70#0" expanded="true" />
               </folding>
@@ -128,8 +127,8 @@
         <option value="$PROJECT_DIR$/node.c" />
         <option value="$PROJECT_DIR$/stringset.h" />
         <option value="$PROJECT_DIR$/util.c" />
-        <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/stringset.c" />
+        <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
   </component>
@@ -220,12 +219,12 @@
       <updated>1511075422880</updated>
       <workItem from="1511075432853" duration="14128000" />
       <workItem from="1514510258549" duration="39089000" />
-      <workItem from="1515698095547" duration="1003000" />
+      <workItem from="1515698095547" duration="1032000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54220000" />
+    <option name="totallyTimeSpent" value="54249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1260" height="777" extended-state="0" />
@@ -426,22 +425,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stringset.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="66" column="21" lean-forward="false" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
+          <folding>
+            <element signature="e#51#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stringset.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="e#51#70#0" expanded="true" />
           </folding>
         </state>
       </provider>
