@@ -60,8 +60,7 @@ float stringset_load_value(stringset *str_set){
 
 int stringset_add(stringset *str_set, const char *str) {
     if (str_set->num_elements >= stringset_load_value(str_set))
-        ;
-//        stringset_rehash(str_set);
+        stringset_rehash(str_set);
 
     unsigned long hashcode = hash_code(str_set, str);
     node *tmp = str_set->node_array[hashcode];
