@@ -17,8 +17,9 @@ int main() {
     stringset_add(s, "ir heads");
     stringset_add(s, "r heads");
     stringset_add(s, " heads");
-//    int i = stringset_add(s, " heads");
-//    printf("result: %d\n", i);
+//    stringset_add(s, " heads");
+    int i = stringset_add(s, " heads");
+    printf("result: %d\n", i);
     printf("elements: %u\n", s->num_elements);
     printf("length: %u\n", s->node_array_length);
     printf("load value: %f\n", stringset_load_value(s));

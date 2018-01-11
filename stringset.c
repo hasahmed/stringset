@@ -60,22 +60,26 @@ float stringset_load_value(stringset *str_set){
 
 int stringset_add(stringset *str_set, const char *str) {
     if (str_set->num_elements >= stringset_load_value(str_set))
-        stringset_rehash(str_set);
+        ;
+//        stringset_rehash(str_set);
 
     unsigned long hashcode = hash_code(str_set, str);
     node *tmp = str_set->node_array[hashcode];
+    node *prev = NULL;
     if (tmp) {
-        while (tmp->next) {
+        while (tmp) {
             if (strcmp(tmp->string, str) == 0)
-                return 0;
+                return 0; //can't be added because the element already exists in set
+            prev = tmp;
             tmp = tmp->next;
-        }
-        if (strcmp(tmp->string, str) == 0)
-            return 0;
-        list_insert_new_after(tmp, str);
+        } // the element does not exist in the set
+        node *new_insert_node = node_new(str, NULL);
+        new_insert_node->next = tmp;
+        if (prev) // if prev is NULL, then we are the first element in the list, and this is not needed
+            prev->next = new_insert_node;
         str_set->num_elements++;
         return 1;
-    } else {
+    } else { //there is no node at the place where we want to insert, so make a new one
         str_set->node_array[hashcode] = node_new(str, NULL);
         str_set->num_elements++;
         return 1;
@@ -88,7 +92,7 @@ int stringset_remove(stringset *str_set, const char *str) {
     node *prev = NULL;
     while (tmp) {
         if(strcmp(tmp->string, str) == 0) {
-            if (prev == NULL){
+            if (prev){
                 str_set->node_array[hashcode] = tmp->next;
                 node_free(tmp);
                 str_set->num_elements--;
