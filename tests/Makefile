@@ -2,6 +2,7 @@ CC = gcc
 CFLAGS = -I/Users/hasankatie/CUnit/include
 #LDFLAGS = -L/Users/hasankatie/CUnit/lib
 EXE = runtests
+VPATH = ../
 
 
 OBJS = node.o stringset.o util.o tests.o
@@ -12,4 +13,4 @@ $(EXE) : $(OBJS)
 clean :
 	rm -f $(EXE) *.o
 
-#objs : $(OBJS)
+objs : $(OBJS)

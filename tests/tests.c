@@ -6,46 +6,27 @@
 #include "../stringset.h"
 #include "../util.h"
 
-int p_init(){
-    //this is the function used for setup of the suite
-    puts("initializing");
+int node_test_suite_init(){
+    return 0;
+}
+int node_test_suite_cleanup(){
     return 0;
 }
 
-int p_cleanup(){
-    puts("cleaning up");
-    return 0;
-}
-
-int trippleNum(int num){
-    return num * 3;
-}
-
-int doubleNum(int x){
-    return x * 2;
-}
-
-void test_doubleNum(){
-    CU_ASSERT_EQUAL(doubleNum(2), 4);
-}
-void test_trippleNum(){
-    CU_ASSERT_EQUAL(trippleNum(2), 6);
+void test_node_new__node_free(){
+    node *n = node_new("hello", NULL);
+    CU_ASSERT_STRING_EQUAL("hello", n->string);
+    CU_ASSERT_PTR_NULL(n->next);
+    node_free(n);
 }
 
 int main(){
     CU_initialize_registry(); //must call first
-    CU_pSuite suite = CU_add_suite("Sweet1", &p_init, &p_cleanup);
-    if(suite == 0){
+    CU_pSuite node_suite = CU_add_suite("Node Tests", &node_test_suite_init, &node_test_suite_cleanup);
+    if(node_suite == 0){
         puts("successfully added suite");
     }
-    /*CU_pTest test1 = CU_add_test(suite, "test1", test_doubleNum);*/
-    CU_ADD_TEST(suite, test_doubleNum);
-    CU_pTest test2 = CU_add_test(suite, "test2", test_trippleNum);
-    CU_basic_set_mode(CU_BRM_NORMAL);
-    //CU_basic_run_tests();
-    CU_basic_run_suite(suite);
-
-
-    puts("Go to cleanup");
+    CU_ADD_TEST(node_suite, test_node_new__node_free);
+    CU_basic_run_suite(node_suite);
     CU_cleanup_registry();
 }
