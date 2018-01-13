@@ -19,6 +19,21 @@ void test_node_new__node_free(){
     CU_ASSERT_PTR_NULL(n->next);
     node_free(n);
 }
+void test_linked_nodes(){
+    node *next = node_new("goodbye", NULL); //last in list
+    node *first = node_new("hello", next); //first in list
+
+    CU_ASSERT_STRING_EQUAL("hello", first->string);
+
+    printf("%d\n", strcmp(next->string, "goodbye"));
+    CU_ASSERT_STRING_EQUAL("goodbye", next->string);
+
+//    CU_ASSERT_EQUAL(next, first->next);
+
+    CU_ASSERT_PTR_NULL(next->next);
+    node_free(next);
+    node_free(first);
+}
 
 int main(){
     CU_initialize_registry(); //must call first
@@ -27,6 +42,7 @@ int main(){
         puts("successfully added suite");
     }
     CU_ADD_TEST(node_suite, test_node_new__node_free);
+    CU_ADD_TEST(node_suite, test_linked_nodes);
     CU_basic_run_suite(node_suite);
     CU_cleanup_registry();
 }

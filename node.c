@@ -13,8 +13,8 @@
  * next:   The node that will come after this new node
  */
 node* node_new(const char *string, node *next){
-    node *newnode = (node*)malloc(sizeof(node));
-    newnode->string = (char*)malloc((sizeof(char) * my_strlen(string) + 1)); //+1 needed for null character
+    node *newnode = (node*)malloc(sizeof(node)); //malloc
+    newnode->string = (char*)malloc((sizeof(char) * my_strlen(string) + 1)); //+1 needed for null character //malloc
     my_strcpy(newnode->string, string);
     newnode->next = next;
     return newnode;
@@ -24,8 +24,8 @@ node* node_new(const char *string, node *next){
  * n: The node to free
  */
 void node_free(node *n){
-    free(n->string);
-    free(n);
+    free(n->string); //free
+    free(n); //free
 }
 //node list stuff
 /**
