@@ -28,7 +28,7 @@ void test_linked_nodes(){
     printf("%d\n", strcmp(next->string, "goodbye"));
     CU_ASSERT_STRING_EQUAL("goodbye", next->string);
 
-//    CU_ASSERT_EQUAL(next, first->next);
+    CU_ASSERT_EQUAL(next, first->next);
 
     CU_ASSERT_PTR_NULL(next->next);
     node_free(next);
