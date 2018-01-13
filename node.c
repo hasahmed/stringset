@@ -14,7 +14,7 @@
  */
 node* node_new(const char *string, node *next){
     node *newnode = (node*)malloc(sizeof(node)); //malloc
-    newnode->string = (char*)malloc((sizeof(char) * my_strlen(string) + 1)); //+1 needed for null character //malloc
+    newnode->string = (char*)malloc(((sizeof(char) * my_strlen(string)) + 1)); //+1 needed for null character //malloc
     my_strcpy(newnode->string, string);
     newnode->next = next;
     return newnode;
