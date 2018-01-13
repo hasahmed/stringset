@@ -1,16 +1,16 @@
 CC = gcc
-CFLAGS = -I/Users/hasankatie/CUnit/include
-#LDFLAGS = -L/Users/hasankatie/CUnit/lib
+CFLAGS = -I$(HOME)/CUnit/include
+LDFLAGS = -L$(HOME)/CUnit/lib
 EXE = runtests
-VPATH = ../
-
 
 OBJS = node.o stringset.o util.o tests.o
+SRCS = ../node.c ../stringset.c ../util.c tests.c
 
-$(EXE) : $(OBJS)
-	$(CC) $(CFLAGS) -o $(EXE) $(OBJS) -lcunit
+$(EXE) : objs
+	$(CC) $(LDFLAGS) $(CFLAGS) -o $(EXE) $(OBJS) -lcunit
+
+objs : $(SRCS)
+	$(CC) $(CFLAGS) -c $(SRCS) 
 
 clean :
 	rm -f $(EXE) *.o
-
-objs : $(OBJS)
