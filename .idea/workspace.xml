@@ -11,10 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fed409a-c6e1-4472-b103-06b83bdf1be1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/runtests" afterPath="$PROJECT_DIR$/tests/runtests" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/tests.c" afterPath="$PROJECT_DIR$/tests/tests.c" />
-    </list>
+    <list default="true" id="3fed409a-c6e1-4472-b103-06b83bdf1be1" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,8 +37,8 @@
       <file leaf-file-name="tests.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/tests.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="233">
+              <caret line="39" column="42" lean-forward="false" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -235,12 +232,12 @@
       <updated>1511075422880</updated>
       <workItem from="1511075432853" duration="14128000" />
       <workItem from="1514510258549" duration="39089000" />
-      <workItem from="1515698095547" duration="6016000" />
+      <workItem from="1515698095547" duration="6215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59233000" />
+    <option name="totallyTimeSpent" value="59432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1277" height="777" extended-state="6" />
@@ -465,8 +462,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/tests.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="233">
+          <caret line="39" column="42" lean-forward="false" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
           <folding />
         </state>
       </provider>
