@@ -4,8 +4,8 @@ CFLAGS = -c -g -Wall
 LDFLAGS = -g
 
 
-EXE = stringset_test
-GRIND_CMD = valgrind --leak-check=yes ./$(EXE)
+EXE=stringset_test
+GRIND_CMD=valgrind --leak-check=yes ./$(EXE)
 SERVER_GRIND=servertest.sh
 
 
@@ -17,6 +17,12 @@ stringset_test : $(OBJS)
 	@$(CC) $(LDFLAGS) -o $(EXE) \
 	$(OBJS)
 	@echo "Done"
+
+run : stringset_test
+	@echo "Running...\n"
+	@./$(EXE)
+	@echo "\n...finished"
+
 
 grind : $(EXE)
 	$(GRIND_CMD)
