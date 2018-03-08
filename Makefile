@@ -11,7 +11,7 @@ SERVER_GRIND=servertest.sh
 
 
 
-OBJS = stringset.o main.o node.o util.o
+OBJS = stringset.o main.o strll.o
 stringset_test : $(OBJS)
 	@echo "Compiling..."
 	@$(CC) $(LDFLAGS) -o $(EXE) \
@@ -41,13 +41,13 @@ main.o : main.c
 	@$(CC) $(CFLAGS) main.c
 
 
-node.o : node.c
+strll.o : strll.c
 	@echo "Compiling..."
-	@$(CC) $(CFLAGS) node.c
+	@$(CC) $(CFLAGS) strll.c
 
-util.o : util.c
-	@echo "Compiling..."
-	@$(CC) $(CFLAGS) util.c
+# util.o : util.c
+# 	@echo "Compiling..."
+# 	@$(CC) $(CFLAGS) util.c
 
 clean :
 	@echo "Cleaning..."
