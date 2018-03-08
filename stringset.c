@@ -14,20 +14,19 @@ stringset* stringset_new(unsigned int initial_size, float load_factor){
     str_set->num_buckets = initial_size;
     str_set->load_factor = (load_factor <= 0) ? 0.75f : load_factor;
     unsigned int i = 0;
-    for (i = 0; i < initial_size; i++) {
+    for (i = 0; i < str_set->num_buckets; i++) {
         str_set->strll_array[i] = strll_new(); //intilize all the linked lists
     }
-    str_set->num_buckets = 0; //all that has been allocated is the pointer to the first element
     return str_set;
 }
 
-void stringset_free(stringset *str_set){
+void stringset_free(stringset **str_set){
     int i = 0;
-    for (i = 0; i < str_set->num_buckets; i++){
-        strll_free(str_set->strll_array[i]);
+    for (i = 0; i < (*str_set)->num_buckets; i++){
+        strll_free((*str_set)->strll_array[i]);
     }
-    free(str_set->strll_array);
-    free(str_set);
+    free((*str_set)->strll_array);
+    free(*str_set);
 }
 
 // int stringset_check(stringset *str_set, const char *str) {
@@ -44,7 +43,7 @@ void stringset_free(stringset *str_set){
 //     return str_set->load_factor * (float)str_set->node_array_length;
 // }
 
-// int stringset_add(stringset *str_set, const char *str) {
+// int stringset_add(stringset **str_set, const char *str) {
 //     if (str_set->num_elements >= stringset_load_value(str_set))
 //         stringset_rehash(str_set);
 
@@ -152,10 +151,10 @@ void stringset_free(stringset *str_set){
 //     free(new_str_set);
 // }
 
-unsigned long hash_code(stringset *str_set, const char *str) { /* copied djb2 hashing algorithm */
+unsigned long hash_code(stringset **str_set, const char *str) { /* copied djb2 hashing algorithm */
     unsigned long hash = 5381;
     int c;
     while ((c = *str++))
         hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
-    return hash % str_set->num_buckets;
+    return hash % (*str_set)->num_buckets;
 }
