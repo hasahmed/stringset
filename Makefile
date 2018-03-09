@@ -4,7 +4,7 @@ CFLAGS = -c -g -Wall
 LDFLAGS = -g
 
 
-EXE=stringset_test
+EXE=test
 GRIND_CMD=valgrind --leak-check=yes ./$(EXE)
 SERVER_GRIND=servertest.sh
 

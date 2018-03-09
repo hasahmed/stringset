@@ -8,15 +8,21 @@
 #include "stringset.h"
 #include "strll.h"
 
+#define STRSET_DEFAULT_INIT_SIZE 100
+#define STRSET_DEFAULT_LOAD_FACTOR 0.75f
+
 stringset* stringset_new(unsigned int initial_size, float load_factor){
     stringset *str_set = (stringset*) malloc(sizeof(stringset)); //allocate the pointer for the whole string set
-    str_set->strll_array = (strll**)malloc((sizeof(strll*) * initial_size)); // allocate the pointer for the node_array
-    str_set->num_buckets = initial_size;
-    str_set->load_factor = (load_factor <= 0) ? 0.75f : load_factor;
+    str_set->num_buckets = initial_size ? initial_size : STRSET_DEFAULT_INIT_SIZE; //if the initial size is 0, then make it 100
+
+    str_set->strll_array = (strll**)malloc((sizeof(strll*) * str_set->num_buckets)); // allocate the pointer for the node_array
+    str_set->load_factor = (load_factor <= 0) ? STRSET_DEFAULT_LOAD_FACTOR : load_factor;
+    str_set->num_elements = 0;
     unsigned int i = 0;
     for (i = 0; i < str_set->num_buckets; i++) {
         str_set->strll_array[i] = strll_new(); //intilize all the linked lists
     }
+
     return str_set;
 }
 
@@ -43,32 +49,21 @@ void stringset_free(stringset **str_set){
 //     return str_set->load_factor * (float)str_set->node_array_length;
 // }
 
-// int stringset_add(stringset **str_set, const char *str) {
-//     if (str_set->num_elements >= stringset_load_value(str_set))
-//         stringset_rehash(str_set);
+void stringset_add(stringset **str_set, char *str) {
 
-//     unsigned long hashcode = hash_code(str_set, str);
-//     node *tmp = str_set->node_array[hashcode];
-//     node *prev = NULL;
-//     if (tmp) {
-//         while (tmp) {
-//             if (strcmp(tmp->string, str) == 0)
-//                 return 0; //can't be added because the element already exists in set
-//             prev = tmp;
-//             tmp = tmp->next;
-//         } // the element does not exist in the set
-//         node *new_insert_node = node_new(str, NULL);
-//         new_insert_node->next = tmp;
-//         if (prev) // if prev is NULL, then we are the first element in the list, and this is not needed
-//             prev->next = new_insert_node;
-//         str_set->num_elements++;
-//         return 1;
-//     } else { //there is no node at the place where we want to insert, so make a new one
-//         str_set->node_array[hashcode] = node_new(str, NULL);
-//         str_set->num_elements++;
-//         return 1;
-//     }
-// }
+    unsigned long hashcode = hash_code(str_set, str);
+    strll *ll = (*str_set)->strll_array[hashcode];
+    strll_insert(ll, str);
+
+}
+
+int stringset_contains(stringset **str_set, char *str) {
+    unsigned long hashcode = hash_code(str_set, str);
+    strll *ll = (*str_set)->strll_array[hashcode];
+    return strll_has_entry(ll, str);
+}
+
+
 
 // int stringset_remove(stringset *str_set, const char *str) {
 //     unsigned long hashcode = hash_code(str_set, str) % str_set->node_array_length;
