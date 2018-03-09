@@ -3,3 +3,4 @@
 *.o
 cmake-build-debug/*
 .idea/*
+test.dSYM/*
